@@ -21,8 +21,10 @@ const daysData = [
   },
 ];
 
+
 export default function Application(props) {
   const [selectedDay, setSelectedDay] = useState('Monday');
+
   return (
     <main className="layout">
       <section className="sidebar">
