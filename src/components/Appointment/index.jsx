@@ -6,12 +6,13 @@ import Empty from './Empty';
 import "components/Appointment/styles.scss";
 
 const Appointment = (props) => {
-  
+  console.log(props)
+  const { id, interview, time } = props;
   return (
     <>
-      <Header />
+      <Header time={time}/>
       <article className="appointment">
-        <h2>{props.time}</h2>
+        {interview ? <Show student={interview.student} interviewer={interview.interviewer.name}/> : <Empty />}
       </article>
     </>
   )
