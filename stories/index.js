@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -17,6 +17,7 @@ import Show from "components/Appointment/Show";
 import Confirm from "components/Appointment/Confirm";
 import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
+import Form from "components/Appointment/Form";
 
 
 storiesOf("Button", module)
@@ -161,4 +162,11 @@ storiesOf("Button", module)
     .add("Confirm", () => <Confirm message="I am a confirm message" onCancel={action("onCancel")} onConfirm={action("onConfirm")}/>)
     .add("Status", () => <Status message="I am a status" />)
     .add("Error", () => <Error message="I am an error" onClose={action("onClose")}/>)
-    
+    .add("Form Create", () => <Form interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")}/>)
+    .add("Form Edit", () => <Form student="Mike Auty" interviewer="3" interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")}/>)
+    .add("Appointment Empty", () => (
+      <Fragment>
+        <Appointment id={1} time="4pm" />
+        <Appointment time="5pm" />
+      </Fragment>
+    ))

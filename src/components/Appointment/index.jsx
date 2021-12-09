@@ -1,13 +1,19 @@
-import React from 'react'
+import React from 'react';
 
+import Header from './Header';
+import Show from './Show';
+import Empty from './Empty';
 import "components/Appointment/styles.scss";
 
 const Appointment = (props) => {
   
   return (
-    <article className="appointment">
-      <h2>I'm an appointment {props.time}</h2>
-    </article>
+    <>
+      <Header />
+      <article className="appointment">
+        <h2>{props.time}</h2>
+      </article>
+    </>
   )
 }
 

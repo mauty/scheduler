@@ -11,18 +11,20 @@ const interviewers = [
   { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
 ];
 
-export default function InterviewerList(props) {
-  const [selectedInterviewer, setSelectedInterviewer] = useState()
-
- const interviewerComponentArray = interviewers.map((interviewer) => 
-  <InterviewerListItem
-    key={interviewer.id} 
-    name={interviewer.name}
-    avatar={interviewer.avatar}
-    selectedInterviewer={interviewer.id === selectedInterviewer}
-    setSelectedInterviewer={() => setSelectedInterviewer(interviewer.id)}
-  />
-)
+const InterviewerList = (props) => {
+  const {interviewers, selectedInterviewer, setInterviewer} = props
+  
+console.log('props',props)
+  const interviewerComponentArray = interviewers.map((interviewer) => {
+    console.log(interviewer.id, 'selectedInterviewer', selectedInterviewer);
+    return <InterviewerListItem
+      key={interviewer.id}
+      name={interviewer.name}
+      avatar={interviewer.avatar}
+      interviewer={interviewer.id === selectedInterviewer}
+      setInterviewer={() => setInterviewer(interviewer.id)}
+    />
+  });
 
   return (
     <section className="interviewers">
@@ -32,4 +34,6 @@ export default function InterviewerList(props) {
       </ul>
     </section>
   );
-}
+};
+
+export default InterviewerList;
