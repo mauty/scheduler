@@ -21,7 +21,9 @@ export function getInterview(state, interviewObjectFromAppointment) {
     return null
   }
   const interviewerId = interviewObjectFromAppointment.interviewer
-  const interviewerObject = {interviewer: state.interviewers[interviewerId], student: interviewObjectFromAppointment.student}
+  const interviewerObject = {
+    interviewer: state.interviewers[interviewerId], 
+    student: interviewObjectFromAppointment.student}
   // console.log('interviewerObject', interviewerObject)
   return interviewerObject;
 }
