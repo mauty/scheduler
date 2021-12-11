@@ -6,7 +6,7 @@ import Empty from './Empty';
 import "components/Appointment/styles.scss";
 
 const Appointment = (props) => {
-  console.log(props)
+  // console.log(props)
   const { id, interview, time } = props;
   return (
     <>
