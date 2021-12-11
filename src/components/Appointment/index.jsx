@@ -7,7 +7,7 @@ import "components/Appointment/styles.scss";
 
 const Appointment = (props) => {
   // console.log(props)
-  const { id, interview, time } = props;
+  const { interview, time } = props;
   return (
     <>
       <Header time={time}/>

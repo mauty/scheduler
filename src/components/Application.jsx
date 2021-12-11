@@ -24,7 +24,6 @@ export default function Application(props) {
   const setDay = day => setState({ ...state, day });
   // const setDays = days => setState(prev => ({ ...prev, days}))
 
-  const urlDays = 'api/days';
 
   useEffect(() => {
     Promise.all([
