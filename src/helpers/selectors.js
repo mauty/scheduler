@@ -14,3 +14,14 @@ export function getAppointmentsForDay(state, day) {
   }
   return resultsArray;
 }
+
+export function getInterview(state, interviewObjectFromAppointment) {
+  // console.log('interviewObjectFromAppointment',interviewObjectFromAppointment)
+  if (interviewObjectFromAppointment === null) {
+    return null
+  }
+  const interviewerId = interviewObjectFromAppointment.interviewer
+  const interviewerObject = {interviewer: state.interviewers[interviewerId], student: interviewObjectFromAppointment.student}
+  // console.log('interviewerObject', interviewerObject)
+  return interviewerObject;
+}
