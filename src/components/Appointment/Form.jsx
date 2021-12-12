@@ -4,8 +4,8 @@ import Button from 'components/Button';
 import InterviewerList from 'components/InterviewerList';
 
 const Form = (props) => {
-  const { interviewers, onSave, onCancel } = props;
-  const [student, setStudent] = useState(student || "");
+  const { interviewers, onSave, onCancel, student:defaultName } = props;
+  const [student, setStudent] = useState(defaultName || "");
   const [interviewer, setInterviewer] = useState(null);
 
   console.log('interviewer', interviewer)
