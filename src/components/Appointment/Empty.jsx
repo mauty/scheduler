@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Empty = (props) => {
-  const {onAdd} = props;
+  const { onAdd } = props;
   return (
     <main className="appointment__add">
       <img
@@ -11,7 +11,7 @@ const Empty = (props) => {
         onClick={onAdd}
       />
     </main>
-   );
-}
+  );
+};
 
 export default Empty;

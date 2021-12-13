@@ -1,28 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-import Button from 'components/Button';
-import InterviewerList from 'components/InterviewerList';
+import Button from "components/Button";
+import InterviewerList from "components/InterviewerList";
 
 const Form = (props) => {
-  const { interviewers, onSave, onCancel, student:defaultName } = props;
+  const { interviewers, onSave, onCancel, student: defaultName } = props;
   const [student, setStudent] = useState(defaultName || "");
   const [interviewer, setInterviewer] = useState(null);
 
-  console.log('interviewer', interviewer)
+  console.log("interviewer", interviewer);
   const reset = () => {
-    setStudent('');
+    setStudent("");
     setInterviewer(null);
-  }
+  };
 
   const cancel = () => {
     reset();
     onCancel();
-  }
+  };
 
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
-        <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+        <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
             name="name"
@@ -32,7 +32,7 @@ const Form = (props) => {
             onChange={(event) => setStudent(event.target.value)}
           />
         </form>
-        <InterviewerList 
+        <InterviewerList
           interviewers={interviewers}
           selectedInterviewer={interviewer}
           setInterviewer={setInterviewer}
@@ -40,13 +40,16 @@ const Form = (props) => {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={onSave}>Save</Button>
+          <Button danger onClick={cancel}>
+            Cancel
+          </Button>
+          <Button confirm onClick={onSave}>
+            Save
+          </Button>
         </section>
       </section>
     </main>
   );
-}
+};
 
 export default Form;
-

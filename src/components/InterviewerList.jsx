@@ -1,5 +1,5 @@
-import React from 'react';
-import InterviewerListItem from './InterviewerListItem';
+import React from "react";
+import InterviewerListItem from "./InterviewerListItem";
 
 import "components/InterviewerList.scss";
 
@@ -12,26 +12,26 @@ import "components/InterviewerList.scss";
 // ];
 
 const InterviewerList = (props) => {
-  const {interviewers, selectedInterviewer, setInterviewer} = props
-  
-console.log('props',props)
+  const { interviewers, selectedInterviewer, setInterviewer } = props;
+
+  console.log("props", props);
   const interviewerComponentArray = interviewers.map((interviewer) => {
-    console.log(interviewer.id, 'selectedInterviewer', selectedInterviewer);
-    return <InterviewerListItem
-      key={interviewer.id}
-      name={interviewer.name}
-      avatar={interviewer.avatar}
-      interviewer={interviewer.id === selectedInterviewer}
-      setInterviewer={() => setInterviewer(interviewer.id)}
-    />
+    console.log(interviewer.id, "selectedInterviewer", selectedInterviewer);
+    return (
+      <InterviewerListItem
+        key={interviewer.id}
+        name={interviewer.name}
+        avatar={interviewer.avatar}
+        interviewer={interviewer.id === selectedInterviewer}
+        setInterviewer={() => setInterviewer(interviewer.id)}
+      />
+    );
   });
 
   return (
     <section className="interviewers">
       <h4 className="interviewers__header text--light">Interviewer</h4>
-      <ul className="interviewers__list">
-        {interviewerComponentArray}
-      </ul>
+      <ul className="interviewers__list">{interviewerComponentArray}</ul>
     </section>
   );
 };
