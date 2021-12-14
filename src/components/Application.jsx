@@ -61,9 +61,9 @@ export default function Application(props) {
         appointments
       });
     })
-    .catch((err) => {
-      console.log(err)
-    });
+    // .catch((err) => {
+    //   // console.log(err)
+    // });
   };
 
   const cancelInterview = (id, interview) => {
@@ -85,9 +85,9 @@ export default function Application(props) {
         appointments
       });
     })
-    .catch((err) => {
-      console.log(err)
-    });
+    // .catch((err) => {
+    //   console.log(err)
+    // });
   }
 
 

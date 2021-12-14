@@ -4,9 +4,9 @@ import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
 const Form = (props) => {
-  const { interviewers, onSave, onCancel, student: defaultName } = props;
+  const { interviewers, student: defaultName, interviewer: selectedInterviwer, onSave, onCancel } = props;
   const [student, setStudent] = useState(defaultName || "");
-  const [interviewer, setInterviewer] = useState(null);
+  const [interviewer, setInterviewer] = useState(selectedInterviwer || null);
 
   console.log("interviewer", interviewer);
   const reset = () => {

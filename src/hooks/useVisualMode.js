@@ -6,27 +6,18 @@ const useVisualMode = (currentMode) => {
 
   const transition = (newMode, replace = false) => {
     setMode(newMode);
-
     if (replace === true) {
-      const newHistory = [...history];
-      newHistory.pop();
-      newHistory.push(newMode);
-      setHistory(newHistory);
+      setHistory((prev) => [...prev.slice(0, -1), newMode])
     } else {
-      const newHistory = [...history];
-      newHistory.push(newMode);
-      setHistory(newHistory);
-      // ALTERNATE METHOD
-      // setHistory((prev) => [...prev, newMode]);
+      setHistory((prev) => [...prev, newMode]);
     }
   };
 
   const back = () => {
     if (history.length > 1) {
-      const newHistory = [...history];
-      newHistory.pop();
-      setHistory(newHistory);
-      setMode(newHistory[newHistory.length - 1]);
+      const slicedHistory = [...history.slice(0,-1)];
+      setHistory(slicedHistory);
+      setMode(slicedHistory[slicedHistory.length -1]);
     }
   };
 
