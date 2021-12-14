@@ -19,13 +19,17 @@ const Form = (props) => {
     onCancel();
   };
 
+  const save = () => {
+    onSave(student, interviewer)
+  }
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
         <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
-            name="name"
+            name={student}
             type="text"
             placeholder="Enter Student Name"
             value={student}
@@ -43,7 +47,7 @@ const Form = (props) => {
           <Button danger onClick={cancel}>
             Cancel
           </Button>
-          <Button confirm onClick={onSave}>
+          <Button confirm onClick={save}>
             Save
           </Button>
         </section>
