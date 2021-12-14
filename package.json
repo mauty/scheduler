@@ -16,13 +16,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public",
-    "lint": "npx eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src --check",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "build-storybook": "build-storybook -s public"
   },
+  "proxy": "http://localhost:8001",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,13 +42,6 @@
     "@testing-library/react": "^8.0.7",
     "@testing-library/react-hooks": "^7.0.2",
     "babel-loader": "^8.0.5",
-    "eslint": "^8.4.1",
-    "eslint-config-airbnb": "^19.0.2",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
     "node-sass": "^4.14.0",
     "prettier": "2.5.1",
     "react-test-renderer": "^16.14.0"
@@ -62,6 +51,5 @@
       "<rootDir>/node_modules/",
       "<rootDir>/.git/"
     ]
-  },
-  "proxy": "http://localhost:8001"
+  }
 }
