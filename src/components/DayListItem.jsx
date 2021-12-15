@@ -32,10 +32,5 @@ const DayListItem = function (props) {
   );
 };
 
-// DayListItem.propTypes = {
-//   name: PropTypes.string,
-//   spots: PropTypes.number,
-//   selectedDay: PropTypes.string,
-// };
 
 export default DayListItem;
