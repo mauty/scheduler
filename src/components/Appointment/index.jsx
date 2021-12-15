@@ -36,7 +36,10 @@ const Appointment = (props) => {
     };
     bookInterview(id, interview)
       .then(() => transition(SHOW))
-      .catch((err) => transition(ERROR_SAVE, true));
+      .catch((err) => {
+        console.log('err from save', err)
+        transition(ERROR_SAVE, true)
+      });
   };
 
   function confirmDelete() {
