@@ -14,7 +14,6 @@ import "components/Appointment/styles.scss";
 import useVisualMode from "hooks/useVisualMode";
 
 const Appointment = (props) => {
-  // console.log("props from appointment:", props);
   const { id, time, interview, interviewers, bookInterview, cancelInterview } = props;
 
   const EMPTY = "EMPTY";
@@ -36,12 +35,8 @@ const Appointment = (props) => {
       interviewer: interviewer
     };
     bookInterview(id, interview)
-    .then(() => {
-      transition(SHOW)
-    })
-    .catch((err) => {
-      transition(ERROR_SAVE, true)
-    });
+      .then(() => transition(SHOW))
+      .catch((err) => transition(ERROR_SAVE, true));
   };
 
   function confirmDelete() {
@@ -52,10 +47,8 @@ const Appointment = (props) => {
     transition(DELETING, true);
     const interview = null;
     cancelInterview(id, interview)
-    .then(() => transition(EMPTY))
-    .catch((err) => {
-      transition(ERROR_DELETE, true)
-    });
+      .then(() => transition(EMPTY))
+      .catch((err) => transition(ERROR_DELETE, true));
   }
 
   function edit() {

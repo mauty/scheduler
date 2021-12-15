@@ -6,10 +6,7 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
 
-import {
-  getAppointmentsForDay,
-  getInterviewersForDay,
-} from "helpers/selectors";
+import { getAppointmentsForDay, getInterviewersForDay } from "helpers/selectors";
 import { getInterview } from "helpers/selectors";
 
 export default function Application(props) {
@@ -43,7 +40,6 @@ export default function Application(props) {
   }, []);
 
   const bookInterview = (id, interview) => {
-    console.log('values from bookInterview:', id, interview)
     const appointment = {
       ...state.appointments[id],
       interview: {...interview}
@@ -60,14 +56,10 @@ export default function Application(props) {
         ...state,
         appointments
       });
-    })
-    // .catch((err) => {
-    //   // console.log(err)
-    // });
+    });
   };
 
   const cancelInterview = (id, interview) => {
-    console.log('values from cancelInterview:', id, interview)
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -76,7 +68,7 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    console.log('interview from cancelInterview:', interview)
+
     return axios
     .delete(`/api/appointments/${id}`)
     .then((res) => {
@@ -84,11 +76,8 @@ export default function Application(props) {
         ...state,
         appointments
       });
-    })
-    // .catch((err) => {
-    //   console.log(err)
-    // });
-  }
+    });
+  };
 
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
@@ -137,4 +126,4 @@ export default function Application(props) {
       </section>
     </main>
   );
-}
+};

@@ -14,9 +14,7 @@ import "components/InterviewerList.scss";
 const InterviewerList = (props) => {
   const { interviewers, selectedInterviewer, setInterviewer } = props;
 
-  console.log("props", props);
   const interviewerComponentArray = interviewers.map((interviewer) => {
-    console.log(interviewer.id, "selectedInterviewer", selectedInterviewer);
     return (
       <InterviewerListItem
         key={interviewer.id}
