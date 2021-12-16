@@ -2,17 +2,19 @@
 @import "styles/variables.scss";
 
 .button {
-  border-radius: 1rem;
+  padding-bottom: 2px;
+  border-radius: 0.5rem;
   border: 0;
-  font-size: 1.5rem;
-  height: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 2.3rem;
   line-height: 1.2rem;
   margin-right: 1rem;
   width: 8rem;
   border-width: 2px;
   border-style: solid;
-  border-color: $white;
-  color: $white;
+  border-color: #faf8f5;
+  color: #faf8f5;
   background-color: transparent;
 }
 

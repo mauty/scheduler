@@ -1,6 +1,6 @@
 @import "~normalize.css/normalize.css";
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @import "styles/variables.scss";
 @import "styles/reset.scss";
@@ -13,6 +13,7 @@
 
 body {
   font-family: $font-family;
+  background-color: $white;
 }
 
 .layout {
