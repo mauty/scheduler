@@ -9,6 +9,7 @@ const DayListItem = function (props) {
 
   const clickHandler = () => setSelectedDay(name);
 
+  // Conditional CSS classnames
   const dayClasses = classNames("day-list__item", {
     "day-list__item--selected": selectedDay,
     "day-list__item--full": spots === 0,

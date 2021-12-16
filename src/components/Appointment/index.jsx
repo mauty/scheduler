@@ -28,7 +28,7 @@ const Appointment = (props) => {
 
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
 
-  function save(name, interviewer) {
+  const save = (name, interviewer) => {
     transition(SAVING);
     const interview = {
       student: name,
@@ -42,11 +42,11 @@ const Appointment = (props) => {
       });
   };
 
-  function confirmDelete() {
+  const confirmDelete = () => {
     transition(CONFIRM)
   }
 
-  function deleteAppt() {
+  const deleteAppt = () => {
     transition(DELETING, true);
     const interview = null;
     cancelInterview(id, interview)
@@ -54,7 +54,7 @@ const Appointment = (props) => {
       .catch((err) => transition(ERROR_DELETE, true));
   }
 
-  function edit() {
+  const edit = () => {
     transition(EDIT);
   }
 

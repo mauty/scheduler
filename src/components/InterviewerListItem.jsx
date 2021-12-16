@@ -6,10 +6,8 @@ import classNames from "classnames";
 
 export default function InterviewerListItem(props) {
   const { name, avatar, interviewer, setInterviewer } = props;
-  // const clickHandler = () => {
-  //   setSelectedInterviewer(id)
-  // };
 
+  // Conditional CSS classnames
   let interviewerClasses = classNames("interviewers__item", {
     "interviewers__item--selected": interviewer,
   });
