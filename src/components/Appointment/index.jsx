@@ -69,7 +69,7 @@ const Appointment = (props) => {
         {mode === SHOW && (
           <Show
             student={interview && interview.student}
-            interviewer={interview && interview.interviewer.name}
+            interviewer={interview.interviewer.name}
             onEdit={edit}
             onDelete={confirmDelete}
           />
