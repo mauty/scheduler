@@ -2,6 +2,10 @@
 
 Interview Scheduler is a React App that allows users to see a list of interviews already scheduled in each day. They can then book an appointment in an empty slot by entering their name and selecting their preferred Interviewer. The sidebar updates to show how many empty spots are available per day.
 
+
+https://user-images.githubusercontent.com/825888/146446166-fa65b662-3076-4a54-8547-52c315b3032a.mov
+
+
 ## Dependencies
 
 - Data: Axios
